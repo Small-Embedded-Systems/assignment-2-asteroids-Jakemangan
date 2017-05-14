@@ -1,12 +1,22 @@
-/* Game state */
 
-extern float elapsed_time; /* time this ship has been active */
-extern int   score;        /* total score so far */
-extern int   lives;        /* lives remaining */
+//GETTERS
+int getScore(void);
+int getLives(void);
+bool getMenu(void);
+bool getEndGame(void);
+bool getMenuState(void);
+bool getLifeLost(void);
 
-extern struct ship player;
-
-extern struct rock *asteroids; /* array of rocks / pointer to linked-list */
-extern struct missile *shots;  /* array of missiles / pointer to linked-list */
-
-extern const float Dt; /* Time step for physics, needed for consistent motion */
+//MUTATORS
+void incScore(void);
+void decLives(void);
+void disableMenu(void);
+void resetGame(void);
+void setMenuTrue(void);
+void setMenuFalse(void);
+void setLifeLostTrue(void);
+void setLifeLostFalse(void);
+void setEndGameTrue(void);
+void setEndGameFalse(void);
+bool returnEndGame(void);
+void restartGame(void);
